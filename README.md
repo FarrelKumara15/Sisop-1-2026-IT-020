@@ -57,7 +57,7 @@ Clone file tersebut ke folder peta-gunung-kawi. <br/>
 git clone (https://github.com/pocongcyber77/peta-gunung-kawi.git)
 cd peta-gunung-kawi
 ```
-<br/>
+<br/><br/>
 Buat file dengan nama 'parserkoordinat.sh' untuk mengambil data id, site_name, latitude, dan longitude dengan menggunakan regex (dengan bantuan grep, sed, atau awk). Susun hasil dengan format : id, site_name, latitude, longitude. <br/>
 Hasil akan disimpan di file baru bernama 'titik-penting.txt'. <br/>
 
