@@ -41,8 +41,8 @@ e. Jumlah Penumpang Business Class
 elif [ "$pilihan" == 'e' ]; then
       awk -F ',' 'NR>1 && $3 == "Business" {count++} END{print "Jumlah penumpang business calss ada", count, "orang"' $DATA
 ```
-Mencari jumlah penumpang kereta yang berada di business class<
-br/><br/>
+Mencari jumlah penumpang kereta yang berada di business class
+<br/><br/>
 
 ### Soal 2
 Soal 2 diperintahkan untuk mendownload peta-ekspedisi.pdf dan disimpan di folder ekspedisi.<br/><br/>
@@ -142,6 +142,6 @@ NR==2 {
 }
 ' "$input"
 ```
-br/><br/>
+<br/><br/>
 
 ### Soal 3
