@@ -60,8 +60,7 @@ cd peta-gunung-kawi
 <br/>
 Buat file dengan nama 'parserkoordinat.sh' untuk mengambil data id, site_name, latitude, dan longitude dengan menggunakan grep, sed, atau awk. Susun hasil dengan format : id, site_name, latitude, longitude. <br/>
 Hasil akan disimpan di file baru bernama 'titik-penting.txt'. <br/>
-```bash
-  GNU nano 8.7.1                                                                                   parserkoordinat.sh                                                                                             
+```bash                                                                                         
 #!/bin/bash
 
 input="gsxtrack.json"
