@@ -43,7 +43,7 @@ elif [ "$pilihan" == 'e' ]; then
 ```
 Mencari jumlah penumpang kereta yang berada di business class<br/><br/>
 
-# Soal 2
+### Soal 2
 Soal 2 diperintahkan untuk mendownload peta-ekspedisi.pdf dan disimpan di folder ekspedisi.<br/><br/>
 
 Di folder ekspedisi, jalankan
