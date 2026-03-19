@@ -13,13 +13,12 @@ NR==1 {
 NR==2 {
     lat2=$3
     long2=$4
-    
-    # Menghitung titik tengah
+
     mid_long = (long1 + long2) / 2
     mid_lat = (lat1 + lat2) / 2
     
     # Disimpan di posisipusaka.txt
-    printf "Koordinat pusat: %f, %f\n", mid_long, mid_lat >> "'"$output"'"
+    printf "%f, %f\n", mid_long, mid_lat >> "'"$output"'"
 
     # Menampilkan Koordinat Pusat
     printf "Koordinat pusat: %f, %f\n", mid_long, mid_lat
