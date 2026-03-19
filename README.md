@@ -44,3 +44,71 @@ elif [ "$pilihan" == 'e' ]; then
 Mencari jumlah penumpang kereta yang berada di business class<br/><br/>
 
 # Soal 2
+Soal 2 diperintahkan untuk mendownload peta-ekspedisi.pdf dan disimpan di folder ekspedisi.<br/><br/>
+
+Di folder ekspedisi, jalankan
+```bash
+cat peta-ekspedisi-amba.pdf
+```
+Scroll sampai paling bawah dan akan menemukan https://github.com/pocongcyber77/peta-gunung-kawi.git <br/>
+Di github tersebut ada file gsxtrack.json, download file tersebut dengan cara meng-clone-nya. <br/>
+Clone file tersebut ke folder peta-gunung-kawi. <br/>
+```bash
+git clone (https://github.com/pocongcyber77/peta-gunung-kawi.git)
+cd peta-gunung-kawi
+```
+<br/>
+Buat file dengan nama 'parserkoordinat.sh' untuk mengambil data id, site_name, latitude, dan longitude dengan menggunakan grep, sed, atau awk. Susun hasil dengan format : id, site_name, latitude, longitude. <br/>
+Hasil akan disimpan di file baru bernama 'titik-penting.txt'. <br/>
+```bash
+  GNU nano 8.7.1                                                                                   parserkoordinat.sh                                                                                             
+#!/bin/bash
+
+input="gsxtrack.json"
+output="titik-penting.txt"
+
+> "$output"
+
+awk '
+{
+    # Mencari ID
+    if ($0 ~ /"id"/) {
+        match($0, /[0-9]+/)
+        raw_id = substr($0, RSTART, RLENGTH)
+
+        # Format menjadi node_xxx
+        id = sprintf("node_%03d", raw_id)
+    }
+
+    # Mencari Site_Name
+    if ($0 ~ /"site_name"/) {
+        match($0, /"site_name": *"[^"]+"/)
+        site = substr($0, RSTART, RLENGTH)
+        gsub(/"site_name": *"|"/, "", site)
+    }
+
+    # Mencari Latitude
+    if ($0 ~ /"latitude"/) {
+        match($0, /-?[0-9.]+/)
+        lat = substr($0, RSTART, RLENGTH)
+    }
+
+    # Mencari Longitude
+    if ($0 ~ /"longitude"/) {
+        match($0, /-?[0-9.]+/)
+        lon = substr($0, RSTART, RLENGTH)
+
+        # Output
+        printf "%s,%s,%s,%s\n", id, site, lat, lon >> "'"$output"'"
+    }
+}
+' "$input"
+
+echo "Parsing 1 mari cak. tak simpen ndek : $output"
+```
+
+Setelah menyimpan data koordniat
+
+
+
+
