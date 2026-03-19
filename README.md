@@ -50,17 +50,17 @@ Di folder ekspedisi, jalankan
 ```bash
 cat peta-ekspedisi-amba.pdf
 ```
-Scroll sampai paling bawah dan akan menemukan **https://github.com/pocongcyber77/peta-gunung-kawi.git** <br/>
-Di github tersebut ada file **gsxtrack.json**, download file tersebut dengan cara meng-clone-nya. <br/>
-Clone file tersebut ke folder **peta-gunung-kawi**. <br/>
+Scroll sampai paling bawah dan akan menemukan "https://github.com/pocongcyber77/peta-gunung-kawi.git" <br/>
+Di github tersebut ada file "gsxtrack.json", download file tersebut dengan cara meng-clone-nya. <br/>
+Clone file tersebut ke folder "peta-gunung-kawi". <br/>
 ```bash
 git clone (https://github.com/pocongcyber77/peta-gunung-kawi.git)
 cd peta-gunung-kawi
 ```
 <br/>
-Buat file dengan nama **parserkoordinat.sh** untuk mengambil data id, site_name, latitude, dan longitude dengan menggunakan regex (dengan bantuan grep, sed, atau awk). <br/> 
+Buat file dengan nama "parserkoordinat.sh" untuk mengambil data id, site_name, latitude, dan longitude dengan menggunakan regex (dengan bantuan grep, sed, atau awk). <br/> 
 Susun hasil dengan format : id, site_name, latitude, longitude. <br/>
-Hasil akan disimpan di file baru bernama **titik-penting.txt**. <br/>
+Hasil akan disimpan di file baru bernama "titik-penting.txt". <br/>
 
 ```bash <br/>                                                                                         
 #!/bin/bash
@@ -108,8 +108,8 @@ awk '
 echo "Parsing 1 mari cak. tak simpen ndek : $output"
 ```
 <br/>
-Setelah menyimpan data koordniat di file **titik-penting.txt**, pada soal diperintahkan untuk mencari titik pusat menggunakan metode titik simetri diagonal.  <br/>
-Buat di file **nemupusaka.sh** dan outputnya disimpan di **posisipusaka.txt** dengan format (Latitude, Longitude). <br/>
+Setelah menyimpan data koordniat di file "titik-penting.txt", pada soal diperintahkan untuk mencari titik pusat menggunakan metode titik simetri diagonal.  <br/>
+Buat di file "nemupusaka.sh" dan outputnya disimpan di "posisipusaka.txt" dengan format (Latitude, Longitude). <br/>
 
 
 ```bash <br/>
