@@ -6,43 +6,109 @@ a. Jumlah Penumpang<br/>
 b. Jumlah Gerbong<br/>
 c. Usia Tertua Penumpang<br/>
 d. Rata-Rata Usia Penumpang<br/>
-e. Jumlah Penumpang Business Class<br/><br/>
+e. Jumlah Penumpang Business Class<br/>
 
-a. Jumlah Penumpang
+Dijalankan dengan menggunakan, <br/>
 ```bash
-if [ "$pilihan" == 'a' ]; then
-      awk -F ',' 'NR>1 {count++} END{print "Jumlah seluruh penumpang KANJ adalah", count, "orang"}' $DATA
+awk -f KANJ.sh passenger.csv [pilihan]
 ```
-Mencari total penumpang yang berada di dalam kereta api<br/><br/>
 
-b. Jumlah Gerbong
+1. Inisialisasi awal
 ```bash
-elif [ "$pilihan" == 'b' ]; then
-      awk -F ',' 'NR>1 {gerbong[$4]++} END{print "Jumlah gerbong penumpang KANJ adalah", length(gerbong)}' $DATA
+BEGIN {
+    FS=","
+    pilihan = ARGV[2] # Mengambil input pilihan a/b/c/d/e
+    delete ARGV[2] # Agar input pilihan a/b/c/d/e tidak dianggap file oleh awk
+}
 ```
-Mencari banyak gerbong unik yang ada dengan menggunakan array<br/><br/>
+Digunakan sebagai inisialisasi awal sebelum AWK membaca file. <br/> 
+(FS="," (untuk memisahkan kolom menggunakan tanda koma)).
 
-c. Usia Tertua Penumpang
+2. Penanganan Data
 ```bash
-elif [ "$pilihan" == 'c' ]; then
-      awk -F ',' 'NR>1 && $2>max {max=$2; name=$1} END{print name, "adalah penumpang kereta tertua dengan usia", max, "tahun"]' $DATA
-```
-Mencari penumpang kereta dengan usia tertua beserta namanya<br/><br/>
+NR>1 { # Untuk skip kolom pertama
+    count++
+    gerbong[$4]++ # Menghitung penumpang tiap gerbong
+	
+    # Penumpang tertua
+    if ($2 > max) {
+        max = $2
+        oldest = $1
+    }
+    sum += $2 # Menjumlahkan usia
 
-d. Rata-Rata Usia Penumpang
-```bash
-elif [ "$pilihan" == 'd' ]; then
-      awk -F ',' 'NR>1 {sum+=$2; count++} END{print "Rata-rata usia penumpang adalah", int(sum/count), "tahun"}' $DATA
+	# Penumpang Business Class
+    if ($3 == "Business") {
+        business++
+    }
+}
 ```
-Mencari rata-rata usia penumpang kereta<br/><br/>
+Pada penanganan awal ini akan menggunakan NR>1 untuk skip kolom pertama/header yang tidak terpakai agar yang terbaca hanya data penumpang saja. <br/>
+1. [count++], untuk menghitung jumlah penumpang
+2. [gerbong[$4]], menggunakan associative array untuk menghitung jumlah penumpang di tiap gerbong
+3. Mencari penumpang tertua dengan membandingkan tiap data $2 dan menyimpan umur dan namanya
+4. [sum += $1], menjumlahkan usia untuk rata-rata usia penumpang nanti
+5. Mencari jumlah penumpang yang menaiki business class
+<br/>
+3. Pilihan
+Pilihan a<br/>
+```bash
+if (pilihan == "a") {
+        print "Jumlah seluruh penumpang KANJ adalah", count, "orang"
+    }
+```
+Menampilkan jumlah seluruh peumpang KANJ
+<br>
 
-e. Jumlah Penumpang Business Class
+pilihan b<br/>
 ```bash
-elif [ "$pilihan" == 'e' ]; then
-      awk -F ',' 'NR>1 && $3 == "Business" {count++} END{print "Jumlah penumpang business calss ada", count, "orang"' $DATA
+else if (pilihan == "b") {
+	for (i in gerbong) { # Menghitung nilai unik gerbong
+  	     Gerbong++
+        }
+        print "Jumlah gerbong penumpang KANJ adalah", Gerbong
+    }
 ```
-Mencari jumlah penumpang kereta yang berada di business class
-<br/><br/>
+Menggunakan loop dari perhitungan gerbong[$4] untuk menghitung nilai unik gerbong
+<br/>
+
+pilihan c<br/>
+```bash
+else if (pilihan == "c") { 
+        print oldest, "adalah penumpang kereta tertua dengan usia", max, "tahun"
+    }
+```
+Menampilkan nama orang tertua di KANJ beserta umurnya.
+<br/>
+
+pilihan d<br/>
+```bash
+pilihan d<br/>
+else if (pilihan == "d") {
+        print "Rata-rata usia penumpang adalah", int(sum/count), "tahun"
+    }
+```
+Menampilkan rata-rata usia penumpang dengan sum/count.
+<br/>
+
+pilihan e<br/>
+```bash
+else if (pilihan == "e") {
+        print "Jumlah penumpang business class ada", business, "orang"
+    }
+```
+Menampilkan jumlah penumpang yang ada di business class.
+<br/>
+
+pilihan selain (a/b/c/d/e)<br/>
+```bash
+else{
+      print "Soal tidak dikenali. Gunakan a,b,c,d, atau e."
+      print "Contoh Penggunaan: awk -f KANJ.sh passenger.csv"
+    }
+```
+Menampilkan seperti contoh di soal
+
 
 ### Soal 2
 Soal 2 diperintahkan untuk mendownload peta-ekspedisi.pdf dan disimpan di folder ekspedisi.<br/><br/>
