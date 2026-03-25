@@ -6,16 +6,18 @@ BEGIN {
     delete ARGV[2]
 }
 
-NR>1 {
+NR>1 { # Untuk skip kolom pertama
     count++
-    gerbong[$4]++
-   
+    gerbong[$4]++ # Menghitung penumpang tiap gerbong
+	
+    # Penumpang tertua
     if ($2 > max) {
         max = $2
         oldest = $1
     }
-    sum += $2
-    
+    sum += $2 # Menjumlahkan usia
+
+	# Penumpang Business Class
     if ($3 == "Business") {
         business++
     }
@@ -29,7 +31,7 @@ END {
 
     # Pilihan b
     else if (pilihan == "b") {
-	for (g in gerbong) {
+	for (i in gerbong) { # Menghitung nilai unik gerbong
   	     Gerbong++
         }
         print "Jumlah gerbong penumpang KANJ adalah", Gerbong
@@ -47,7 +49,7 @@ END {
 
     # Pilihan e
     else if (pilihan == "e") {
-        print "Jumlah penumpang business calss ada", count, "orang"
+        print "Jumlah penumpang business class ada", count, "orang"
     }
 
     # Bukan kelimanya
