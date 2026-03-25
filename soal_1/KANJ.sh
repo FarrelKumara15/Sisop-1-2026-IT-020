@@ -55,7 +55,7 @@ END {
     # Bukan kelimanya
     else{
       print "Soal tidak dikenali. Gunakan a,b,c,d, atau e."
-      print "Contoh Penggunaan: awk -f KANJ.sh passenger.csv"
+      print "Contoh Penggunaan: awk -f KANJ.sh passenger.csv a"
     }
 } 
 
