@@ -2,8 +2,8 @@
 
 BEGIN {
     FS=","
-    pilihan = ARGV[2]
-    delete ARGV[2]
+    pilihan = ARGV[2] # Mengambil input pilihan a/b/c/d/e
+    delete ARGV[2] # Agar input pilihan a/b/c/d/e tidak dianggap file oleh awk
 }
 
 NR>1 { # Untuk skip kolom pertama
