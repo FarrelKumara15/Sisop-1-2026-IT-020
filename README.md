@@ -59,10 +59,10 @@ if (pilihan == "a") {
         print "Jumlah seluruh penumpang KANJ adalah", count, "orang"
     }
 ```
-Menampilkan jumlah seluruh peumpang KANJ
-<br><br/>
+Menampilkan jumlah seluruh peumpang KANJ<br/>
+<img width="433" height="74" alt="20260325_23h15m35s_grim" src="https://github.com/user-attachments/assets/ecfb34e4-e8a5-4aa7-9b74-3c34b304fb9d" />
 
-#### pilihan b<br/>
+#### Pilihan b<br/>
 ```bash
 else if (pilihan == "b") {
 	for (i in gerbong) { # Menghitung nilai unik gerbong
@@ -71,48 +71,49 @@ else if (pilihan == "b") {
         print "Jumlah gerbong penumpang KANJ adalah", Gerbong
     }
 ```
-Menggunakan loop dari perhitungan gerbong[$4] untuk menghitung nilai unik gerbong
-<br/><br/>
+Menggunakan loop dari perhitungan gerbong[$4] untuk menghitung nilai unik gerbong<br/>
+<img width="363" height="72" alt="20260325_23h15m51s_grim" src="https://github.com/user-attachments/assets/60a8ead6-60d5-4f67-83fe-8fbe31c0fd32" />
 
-#### pilihan c<br/>
+#### Pilihan c<br/>
 ```bash
 else if (pilihan == "c") { 
         print oldest, "adalah penumpang kereta tertua dengan usia", max, "tahun"
     }
 ```
-Menampilkan nama orang tertua di KANJ beserta umurnya.
-<br/><br/>
+Menampilkan nama orang tertua di KANJ beserta umurnya.<br/>
+<img width="613" height="79" alt="20260325_23h16m02s_grim" src="https://github.com/user-attachments/assets/1b941ead-73fb-48f9-aba1-f264e96ff375" />
 
-#### pilihan d<br/>
+#### Pilihan d<br/>
 ```bash
 pilihan d<br/>
 else if (pilihan == "d") {
         print "Rata-rata usia penumpang adalah", int(sum/count), "tahun"
     }
 ```
-Menampilkan rata-rata usia penumpang dengan sum/count.
-<br/><br/>
+Menampilkan rata-rata usia penumpang dengan sum/count.<br/>
+<img width="384" height="81" alt="20260325_23h16m08s_grim" src="https://github.com/user-attachments/assets/a86b9330-201c-4387-b47e-1e3932d91f57" />
 
-#### pilihan e<br/>
+#### Pilihan e<br/>
 ```bash
 else if (pilihan == "e") {
         print "Jumlah penumpang business class ada", business, "orang"
     }
 ```
-Menampilkan jumlah penumpang yang ada di business class.
-<br/><br/>
+Menampilkan jumlah penumpang yang ada di business class.<br/>
+<img width="414" height="77" alt="20260325_23h16m17s_grim" src="https://github.com/user-attachments/assets/a29e717c-21f6-4bfb-8305-b43dc968d4ee" />
 
-#### pilihan selain (a/b/c/d/e)<br/>
+#### Pilihan selain (a/b/c/d/e)<br/>
 ```bash
 else{
       print "Soal tidak dikenali. Gunakan a,b,c,d, atau e."
-      print "Contoh Penggunaan: awk -f KANJ.sh passenger.csv"
+      print "Contoh Penggunaan: awk -f KANJ.sh passenger.csv a"
     }
 ```
-Menampilkan seperti contoh di soal
+Menampilkan seperti contoh di soal<br/>
+<img width="464" height="101" alt="20260325_23h16m25s_grim" src="https://github.com/user-attachments/assets/67325dfd-7356-4070-b0f8-456d2efe5131" />
 
 <br/><br/>
-### Soal 2
+### Soal 2 <br/>
 Soal 2 diperintahkan untuk mendownload peta-ekspedisi.pdf dan disimpan di folder ekspedisi.<br/><br/>
 
 Di folder ekspedisi, jalankan
