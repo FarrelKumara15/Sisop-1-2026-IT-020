@@ -49,7 +49,7 @@ END {
 
     # Pilihan e
     else if (pilihan == "e") {
-        print "Jumlah penumpang business class ada", count, "orang"
+        print "Jumlah penumpang business class ada", business, "orang"
     }
 
     # Bukan kelimanya
