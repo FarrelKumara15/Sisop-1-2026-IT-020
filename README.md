@@ -13,7 +13,7 @@ Dijalankan dengan menggunakan, <br/>
 awk -f KANJ.sh passenger.csv [pilihan]
 ```
 
-1. Inisialisasi awal
+### 1. Inisialisasi awal
 ```bash
 BEGIN {
     FS=","
@@ -23,8 +23,9 @@ BEGIN {
 ```
 Digunakan sebagai inisialisasi awal sebelum AWK membaca file. <br/> 
 (FS="," (untuk memisahkan kolom menggunakan tanda koma)).
+<br><br/>
 
-2. Penanganan Data
+### 2. Penanganan Data
 ```bash
 NR>1 { # Untuk skip kolom pertama
     count++
@@ -49,18 +50,19 @@ Pada penanganan awal ini akan menggunakan NR>1 untuk skip kolom pertama/header y
 3. Mencari penumpang tertua dengan membandingkan tiap data $2 dan menyimpan umur dan namanya
 4. [sum += $1], menjumlahkan usia untuk rata-rata usia penumpang nanti
 5. Mencari jumlah penumpang yang menaiki business class
-<br/>
-3. Pilihan
-Pilihan a<br/>
+<br/><br/>
+
+### 3. Pilihan <br/>
+#### Pilihan a<br/>
 ```bash
 if (pilihan == "a") {
         print "Jumlah seluruh penumpang KANJ adalah", count, "orang"
     }
 ```
 Menampilkan jumlah seluruh peumpang KANJ
-<br>
+<br><br/>
 
-pilihan b<br/>
+#### pilihan b<br/>
 ```bash
 else if (pilihan == "b") {
 	for (i in gerbong) { # Menghitung nilai unik gerbong
@@ -70,18 +72,18 @@ else if (pilihan == "b") {
     }
 ```
 Menggunakan loop dari perhitungan gerbong[$4] untuk menghitung nilai unik gerbong
-<br/>
+<br/><br/>
 
-pilihan c<br/>
+#### pilihan c<br/>
 ```bash
 else if (pilihan == "c") { 
         print oldest, "adalah penumpang kereta tertua dengan usia", max, "tahun"
     }
 ```
 Menampilkan nama orang tertua di KANJ beserta umurnya.
-<br/>
+<br/><br/>
 
-pilihan d<br/>
+#### pilihan d<br/>
 ```bash
 pilihan d<br/>
 else if (pilihan == "d") {
@@ -89,18 +91,18 @@ else if (pilihan == "d") {
     }
 ```
 Menampilkan rata-rata usia penumpang dengan sum/count.
-<br/>
+<br/><br/>
 
-pilihan e<br/>
+#### pilihan e<br/>
 ```bash
 else if (pilihan == "e") {
         print "Jumlah penumpang business class ada", business, "orang"
     }
 ```
 Menampilkan jumlah penumpang yang ada di business class.
-<br/>
+<br/><br/>
 
-pilihan selain (a/b/c/d/e)<br/>
+#### pilihan selain (a/b/c/d/e)<br/>
 ```bash
 else{
       print "Soal tidak dikenali. Gunakan a,b,c,d, atau e."
@@ -109,7 +111,7 @@ else{
 ```
 Menampilkan seperti contoh di soal
 
-
+<br/><br/>
 ### Soal 2
 Soal 2 diperintahkan untuk mendownload peta-ekspedisi.pdf dan disimpan di folder ekspedisi.<br/><br/>
 
