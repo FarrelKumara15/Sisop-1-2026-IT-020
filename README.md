@@ -1,7 +1,10 @@
 # Sisop-1-2026-IT-020
 ## Farrel Arteya Kumara - 5027251020
 ### Soal 1
-Soal 1 diperintahkan untuk mencari<br/>
+#### Struktur Repository Soal 1<br>
+<img width="197" height="146" alt="2026-03-29_21-38-52" src="https://github.com/user-attachments/assets/139fcafa-7809-4460-81ed-e557cf0c4204" />
+
+<br/>Soal 1 diperintahkan untuk mencari<br/>
 a. Jumlah Penumpang<br/>
 b. Jumlah Gerbong<br/>
 c. Usia Tertua Penumpang<br/>
@@ -114,7 +117,10 @@ Menampilkan seperti contoh di soal<br/>
 
 <br/><br/>
 ### Soal 2 <br/>
-Soal 2 diperintahkan untuk mendownload peta-ekspedisi.pdf dan disimpan di folder ekspedisi.<br/><br/>
+#### Struktur Repository Soal 2
+<img width="305" height="271" alt="image" src="https://github.com/user-attachments/assets/0fdea30c-5444-4604-a340-5ca70d16b03b" />
+
+<br/>Soal 2 diperintahkan untuk mendownload peta-ekspedisi.pdf dan disimpan di folder ekspedisi.<br/><br/>
 
 Di folder ekspedisi, jalankan
 ```bash
@@ -177,10 +183,12 @@ awk '
 
 echo "Parsing 1 mari cak. tak simpen ndek : $output"
 ```
+Hasil di file "titik_penting.txt"<br/>
+<img width="509" height="133" alt="2026-03-29_21-34-15" src="https://github.com/user-attachments/assets/1ddd0583-581e-4c72-b315-8bffc576a860" />
+
 <br/>
 Setelah menyimpan data koordniat di file "titik-penting.txt", pada soal diperintahkan untuk mencari titik pusat menggunakan metode titik simetri diagonal.  <br/>
 Buat di file "nemupusaka.sh" dan outputnya disimpan di "posisipusaka.txt" dengan format (Latitude, Longitude). <br/>
-
 
 ```bash <br/>
 #!/bin/bash
@@ -211,4 +219,5 @@ NR==2 {
 }
 ' "$input"
 ```
-<br/><br/>
+Hasil di file "posisipusaka.txt"<br/>
+<img width="392" height="74" alt="2026-03-29_21-36-41" src="https://github.com/user-attachments/assets/edaf7e5f-0734-4fce-a1b0-d879ed828bee" />
