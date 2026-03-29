@@ -212,10 +212,10 @@ NR==2 { # Menyimpan latitude dan longitude kedua
     mid_lat = (lat1 + lat2) / 2
 
     # Disimpan di posisipusaka.txt
-    printf "Koordinat pusat: %f, %f\n", mid_lat, mid_long >> "'"$output"'"
+    printf "Koordinat pusat: %f,%f\n", mid_lat, mid_long >> "'"$output"'"
 
     # Menampilkan Koordinat Pusat
-    printf "Koordinat pusat: %f, %f\n", mid_lat, mid_long
+    printf "Koordinat pusat: %f,%f\n", mid_lat, mid_long
 }
 ' "$input"
 ```
