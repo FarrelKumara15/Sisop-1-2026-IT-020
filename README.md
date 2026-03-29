@@ -149,7 +149,7 @@ output="titik-penting.txt"
 awk '
 {
     # Mencari ID
-    if ($0 ~ /"id"/) {
+    if ($0 ~ /"id"/) { # Mencari ID di tiap baris
         match($0, /[0-9]+/)
         raw_id = substr($0, RSTART, RLENGTH)
 
@@ -158,20 +158,20 @@ awk '
     }
 
     # Mencari Site_Name
-    if ($0 ~ /"site_name"/) {
+    if ($0 ~ /"site_name"/) { # Mencari Site_Name di tiap baris
         match($0, /"site_name": *"[^"]+"/)
         site = substr($0, RSTART, RLENGTH)
         gsub(/"site_name": *"|"/, "", site)
     }
 
     # Mencari Latitude
-    if ($0 ~ /"latitude"/) {
+    if ($0 ~ /"latitude"/) { # Mencari Latitude di setiap baris
         match($0, /-?[0-9.]+/)
         lat = substr($0, RSTART, RLENGTH)
     }
 
     # Mencari Longitude
-    if ($0 ~ /"longitude"/) {
+    if ($0 ~ /"longitude"/) { # Mencari Longitude do setiap baris
         match($0, /-?[0-9.]+/)
         lon = substr($0, RSTART, RLENGTH)
 
@@ -199,11 +199,11 @@ output="posisipusaka.txt"
 > "$output"
 
 awk -F ',' '
-NR==1 {
+NR==1 { # Menyimpan latitude dan longitude pertama
     lat1=$3
     long1=$4
 }
-NR==2 {
+NR==2 { # Menyimpan latitude dan longitude kedua
     lat2=$3
     long2=$4
 
